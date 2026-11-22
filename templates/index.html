@@ -1,61 +1,83 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hospital Management System</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <header>
-        <nav>
+    <!-- Navigation -->
+    <nav class="navbar">
 
-        <h2 class="logo">🏥 HMS</h2>
+        <div class="logo">🏥 HMS</div>
 
-        <ul>
-
-            <li><a href="#">Home</a></li>
-
-            <li><a href="#">Doctors</a></li>
-
-            <li><a href="#">Patients</a></li>
-
-            <li><a href="#">Appointments</a></li>
-
-            <li><a href="#">Contact</a></li>
-
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="{{ url_for('patient_register') }}">Patients</a></li>
+            <li><a href="#appointments">Appointments</a></li>
         </ul>
 
     </nav>
 
-    <h1>Hospital Management System</h1>
+    <!-- Hero Section -->
+    <section class="hero">
 
-    <p>Your Health is Our Priority</p>
-<section class="features">
-    <div class="logo">
-        <h3>Appointments</h3>
-    </div>
+        <h1>Hospital Management System</h1>
 
-    <div class="logo">
-        <h3>learn more</h3>
-    </div>
-</section>
-    <nav>
-        <h3 class="logo">🩺 Doctors</h3>
-        <h3 class="logo">👨‍⚕️ Patients</h3>
-        <h3 class="logo">📅 Appointments</h3>
-     </nav>
-    
+        <p>Your Health Is Our Priority</p>
 
-    <h2>About Our Hospital</h2>
-        
-    </header>
+        <a href="{{ url_for('patient_register') }}"
+           class="main-btn">
+            Register a Patient
+        </a>
+
+    </section>
+
+    <!-- Dashboard Cards -->
+     <h2 style="text-align:center; margin-top:40px; color:#263445;">
+    Our Services
+</h2>
+    <section class="features">
+
+        <div class="feature-card" id="doctors">
+            <h2>👨‍⚕️ Doctors</h2>
+            <p>Doctor management section</p>
+            <a href="#doctors" class="card-btn">
+                Coming Soon
+            </a>
+        </div>
+
+        <div class="feature-card" id="patients">
+            <h2>🧑‍⚕️ Patients</h2>
+            <p>Register and manage patient information</p>
+            <a href="{{ url_for('patient_register') }}"
+               class="card-btn">
+                Register Patient
+            </a>
+        </div>
+
+        <div class="feature-card" id="appointments">
+            <h2>📅 Appointments</h2>
+            <p>Appointment management section</p>
+            <a href="#appointments" class="card-btn">
+                Coming Soon
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Hospital Management System | Your Health Is Our Priority</p>
+    </footer>
 
 </body>
-
 </html>
