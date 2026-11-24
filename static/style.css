@@ -466,3 +466,496 @@ footer {
 .patient-search button:hover {
     background: #05618e;
 }
+
+
+/* ===== DOCTOR MANAGEMENT PAGE ===== */
+
+.doctor-page {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+.doctor-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.doctor-heading h1 {
+    color: #173b65;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.doctor-heading p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+.doctor-add-btn {
+    background: #1769aa;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.doctor-add-btn:hover {
+    background: #104d80;
+}
+
+/* Doctor Summary Card */
+
+.doctor-summary {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: white;
+    padding: 22px 28px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+    width: fit-content;
+    min-width: 250px;
+    margin-bottom: 30px;
+    border-left: 5px solid #1769aa;
+}
+
+.doctor-summary-icon {
+    font-size: 35px;
+}
+
+.doctor-summary h2 {
+    color: #1769aa;
+    font-size: 28px;
+    margin: 0;
+}
+
+.doctor-summary p {
+    color: #64748b;
+    margin: 5px 0 0;
+}
+
+/* Table Card */
+
+.doctor-table-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 3px 18px rgba(0,0,0,0.07);
+}
+
+.doctor-table-card h2 {
+    color: #173b65;
+    margin-bottom: 8px;
+}
+
+.doctor-table-subtitle {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.doctor-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.doctor-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.doctor-table th {
+    background: #eaf2fa;
+    color: #173b65;
+    padding: 16px;
+    font-size: 14px;
+    border-bottom: 2px solid #d5e3f1;
+}
+
+.doctor-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e5eaf0;
+    color: #334155;
+    font-size: 14px;
+}
+
+.doctor-table tbody tr:hover {
+    background: #f5f9fd;
+}
+
+.doctor-name {
+    font-weight: 600;
+    color: #173b65 !important;
+}
+
+.specialization-tag {
+    display: inline-block;
+    background: #e8f3ff;
+    color: #1769aa;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.doctor-empty {
+    text-align: center;
+    padding: 30px !important;
+    color: #64748b;
+}
+
+.doctor-back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #1769aa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doctor-back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+
+@media (max-width: 650px) {
+    .doctor-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .doctor-heading h1 {
+        font-size: 25px;
+    }
+
+    .doctor-table-card {
+        padding: 15px;
+    }
+
+    .doctor-page {
+        padding: 0 12px;
+    }
+}
+
+/* Doctor Search */
+
+.doctor-search-form {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 25px;
+    flex-wrap: wrap;
+}
+
+.doctor-search-form input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 15px;
+    border: 1px solid #d5e0eb;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.doctor-search-form input:focus {
+    border-color: #1769aa;
+}
+
+.doctor-search-form button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.doctor-search-form button:hover {
+    background: #104d80;
+}
+
+.doctor-search-form a {
+    background: #e8eef5;
+    color: #173b65;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.doctor-search-form {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 25px;
+    flex-wrap: wrap;
+}
+
+.doctor-search-form input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 15px;
+    border: 1px solid #d5e0eb;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.doctor-search-form button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.doctor-search-form a {
+    background: #e8eef5;
+    color: #173b65;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.delete-btn:hover {
+    background: #b02a37;
+}
+
+.edit-btn {
+    display: inline-block;
+    background: #1769aa;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+
+/* ===== LOGIN PAGE ===== */
+
+.login-page {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.login-card h1 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.login-form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-form-group label {
+    display: block;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.login-form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.login-form-group input:focus {
+    outline: none;
+    border-color: #1769aa;
+}
+
+.login-btn {
+    width: 100%;
+    background: #1769aa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #104d80;
+}
+
+.login-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.login-footer {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+.login-back {
+    display: inline-block;
+    margin-top: 18px;
+    color: #1769aa;
+    text-decoration: none;
+}
+/* Appointment Booking */
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1769aa;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.appointment-success {
+    background: #e8f7ee;
+    border: 1px solid #a7dfba;
+    color: #166534;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.appointment-success h1 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.appointment-success h2 {
+    font-size: 20px;
+}
+
+
+/* ===== PATIENT DASHBOARD ===== */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+.dashboard-welcome {
+    background: linear-gradient(120deg, #087eaf, #14558c);
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.dashboard-welcome h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+.dashboard-welcome p {
+    margin: 0;
+}
+
+.dashboard-container > h2 {
+    color: #173b65;
+    margin-bottom: 22px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.dashboard-icon {
+    font-size: 35px;
+}
+
+.dashboard-card h3 {
+    color: #1769aa;
+    margin: 15px 0 10px;
+}
+
+.dashboard-card p {
+    color: #64748b;
+    min-height: 40px;
+    line-height: 1.5;
+}
+
+.logout-btn {
+    margin-top: 30px;
+    background: #dc3545;
+    color: white;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}

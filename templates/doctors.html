@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Management | HMS</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">🏥 HMS</div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/doctor">Add Doctor</a></li>
+            <li><a href="/doctors">View Doctors</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="doctor-page">
+
+        <div class="doctor-heading">
+            <div>
+                <h1>Doctor Management</h1>
+                <p>Manage and view hospital doctor information</p>
+            </div>
+
+            <a href="/doctor" class="doctor-add-btn">
+                + Add New Doctor
+            </a>
+        </div>
+
+        <!-- Doctor Count -->
+        <div class="doctor-summary">
+            <div class="doctor-summary-icon">👨‍⚕️</div>
+            <div>
+                <h2>{{ doctors|length }}</h2>
+                <p>Total Registered Doctors</p>
+            </div>
+        </div>
+
+        <!-- Doctor Table -->
+        <div class="doctor-table-card">
+
+            <h2>Registered Doctors</h2>
+            <p class="doctor-table-subtitle">
+                Complete list of hospital doctors
+            </p>
+            <form action="{{ url_for('view_doctors') }}"
+                method="GET"
+                class="doctor-search-form">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search by ID, name or specialization..."
+                    value="{{ search }}"
+                >
+
+                <button type="submit">Search</button>
+
+                <a href="{{ url_for('view_doctors') }}">Reset</a>
+
+            </form>
+            <div class="doctor-table-container">
+
+                <table class="doctor-table">
+
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Doctor Name</th>
+                            <th>Specialization</th>
+                            <th>Phone Number</th>
+                            <th>Email Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for doctor in doctors %}
+                        <tr>
+                            <td>#{{ doctor['doctor_id'] }}</td>
+                            <td class="doctor-name">
+                                {{ doctor['name'] }}
+                            </td>
+                            <td>
+                                <span class="specialization-tag">
+                                    {{ doctor['specialization'] or 'Not specified' }}
+                                </span>
+                            </td>
+                            <td>{{ doctor['phone'] or 'Not available' }}</td>
+                            <td>{{ doctor['email'] or 'Not available' }}</td>
+                            <td>
+    <a href="{{ url_for('edit_doctor', doctor_id=doctor['doctor_id']) }}"
+       class="edit-btn">
+        Edit
+    </a>
+    <form action="{{ url_for('delete_doctor', doctor_id=doctor['doctor_id']) }}"
+      method="POST"
+      onsubmit="return confirm('Are you sure you want to delete this doctor?');">
+
+    <button type="submit" class="delete-btn">
+        Delete
+    </button>
+
+</form>
+</td>
+                        </tr>
+
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="doctor-empty">
+                                No doctors registered yet.
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <a href="/" class="doctor-back-link">← Back to Home</a>
+
+    </div>
+
+    <footer>Hospital Management System © 2026</footer>
+
+</body>
+</html>

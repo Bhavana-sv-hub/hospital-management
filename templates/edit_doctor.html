@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Doctor | HMS</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🏥 HMS</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/doctors">View Doctors</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container">
+        <div class="form-card">
+
+            <h1>Edit Doctor Details</h1>
+            <p class="form-subtitle">
+                Update the doctor's information
+            </p>
+
+            <form method="POST">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Doctor Name</label>
+                        <input type="text" name="name"
+                               value="{{ doctor.name }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Specialization</label>
+                        <input type="text" name="specialization"
+                               value="{{ doctor.specialization or '' }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" name="phone"
+                               value="{{ doctor.phone or '' }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email"
+                               value="{{ doctor.email or '' }}">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Update Doctor
+                </button>
+
+            </form>
+
+            <a href="{{ url_for('view_doctors') }}" class="back-link">
+                ← Back to Doctors
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

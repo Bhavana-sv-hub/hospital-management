@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HMS</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🏥 HMS</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-page">
+        <div class="login-card">
+
+            <div class="login-icon">🏥</div>
+
+            <h1>WELCOME</h1>
+
+            <p class="login-subtitle">
+                Sign in to Hospital Management System
+            </p>
+
+            {% if error %}
+                <p class="login-error">{{ error }}</p>
+            {% endif %}
+
+            <form action="{{ url_for('login') }}" method="POST">
+
+                <div class="login-form-group">
+                    <label>Username</label>
+                    <input type="text"
+                           name="username"
+                           placeholder="Enter username"
+                           required>
+                </div>
+
+                <div class="login-form-group">
+                    <label>Password</label>
+                    <input type="password"
+                           name="password"
+                           placeholder="Enter password"
+                           required>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+            <p class="login-footer-text">
+    Don't have an account?
+    <a href="{{ url_for('register_user') }}">Register here</a>
+</p>
+            <a href="/" class="login-back-link">
+                ← Back to Home
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

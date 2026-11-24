@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | HMS</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🏥 HMS</div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/doctors">Doctors</a></li>
+            <li><a href="{{ url_for('book_appointment') }}">Book Appointment</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-welcome">
+            <h1>Welcome, {{ username }}!</h1>
+            <p>Your health is our priority.</p>
+        </div>
+
+        <h2>Patient Services</h2>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <div class="dashboard-icon">👨‍⚕️</div>
+                <h3>View Doctors</h3>
+                <p>Explore available hospital doctors and their specializations.</p>
+                <a href="/doctors" class="card-btn">View Doctors</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📅</div>
+                <h3>Book Appointment</h3>
+                <p>Choose a doctor and reserve your daily token.</p>
+                <a href="{{ url_for('book_appointment') }}" class="card-btn">
+                    Book Now
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📋</div>
+                <h3>My Appointments</h3>
+                <p>View your appointment bookings and token numbers.</p>
+                <a href="#" class="card-btn">Coming Soon</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="dashboard-icon">👤</div>
+                <h3>My Profile</h3>
+                <p>View your registered patient information.</p>
+                <a href="#" class="card-btn">Coming Soon</a>
+            </div>
+
+        </div>
+
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+
+    </div>
+
+    <footer>
+        Hospital Management System © 2026
+    </footer>
+
+</body>
+</html>

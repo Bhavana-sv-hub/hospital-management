@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard | HMS</title>
+</head>
+<body>
+
+    <h1>Welcome to Hospital Management System</h1>
+
+    <h2>Hello, {{ username }}!</h2>
+
+    <p>Your Role: {{ role }}</p>
+
+    <form action="{{ url_for('logout') }}" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>

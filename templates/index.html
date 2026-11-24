@@ -20,9 +20,10 @@
 
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="{{ url_for('view_doctors') }}">Doctors</a></li>
             <li><a href="{{ url_for('patient_register') }}">Patients</a></li>
-            <li><a href="#appointments">Appointments</a></li>
+            <li><a href="{{ url_for('book_appointment') }}">Appointments</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
         </ul>
 
     </nav>
@@ -50,8 +51,8 @@
         <div class="feature-card" id="doctors">
             <h2>👨‍⚕️ Doctors</h2>
             <p>Doctor management section</p>
-            <a href="#doctors" class="card-btn">
-                Coming Soon
+            <a href="{{ url_for('add_doctor_page') }}" class="card-btn">
+                Add Doctor
             </a>
         </div>
 
@@ -73,8 +74,8 @@
         <div class="feature-card" id="appointments">
             <h2>📅 Appointments</h2>
             <p>Appointment management section</p>
-            <a href="#appointments" class="card-btn">
-                Coming Soon
+            <a href="{{ url_for('book_appointment') }}" class="card-btn">
+                Book Appointment
             </a>
         </div>
 
